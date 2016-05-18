@@ -12,13 +12,13 @@ where will you're day take you?
 
 1. [Why Day Voyage](#why-day-voyage)
 1. [Up and Running](#up-and-running)
-1. [Requirements](#requirements)
-1. [Development](#development)
-1. [Depolyement] (#deployment)
+  1. [Requirements](#requirements)
+  1. [Development](#development)
+  1. [Depolyement] (#deployment)
 1. [Application Architecture](#application-architecture)
-1. [Unstacking the Stack](#unstacking-the-stack)
-1. [API's](#api's)
-1. [Challenges](#challenges)
+  1. [Unstacking the Stack](#unstacking-the-stack)
+  1. [API's](#apis)
+  1. [Challenges](#challenges)
 1. [Roadmap] (#roadmap)
 1. [Contributing](#contributing)
 
@@ -43,7 +43,7 @@ npm start
 
 > You are now running locally on [localhost:3000](http://localhost:3000/)
 
-## Requirements
+#### Requirements
 
 - React
 - Redux
@@ -54,7 +54,7 @@ npm start
 
 Please see this [repo](https://github.com/sweaty-figs/sweaty-figs-db) for information about requirments and set up for the API driving our data layer.
 
-## Development
+#### Development
 
 To build webpack and generate a bundle:
 From within the root directory:
@@ -62,7 +62,7 @@ From within the root directory:
 npm start
 ```
 
-## Deployment
+#### Deployment
 To generate docs:
 ```sh
 npm start doc
@@ -74,22 +74,22 @@ document
 
 Diagram of architecture goes here
 
-## Unstacking the stack
+### Unstacking the stack
 
 _**Day Voyage is a Single Page Application built with:**_
 - React (drives user driven client side interface)
 - Redux (application state management)
 - React Router and Redux Router (client side routing)
 
-### React
+#### React
 - Views are created using modular and reusable components built in React/JSX.
 - React components implement one-way reactive data flow to immediately rerender views upon changes.
 
-### React Router
+#### React Router
 - Day Voyage uses the React Router library for dynamic route matching to keep our UI in sync with the URL.
 - URL paths are synced seamlessly with React view components and allows for smooth transition between page routes.
 
-### Redux
+#### Redux
 - Unidirectional data-flow normalizes data and provides predictability
 - Manages states and acts as a single source of truth for data shared by components throughout the application
 - Utilized in conjunction with local states to preserve modularity
@@ -103,17 +103,17 @@ _**Day Voyage is a Single Page Application built with:**_
   - **planBuilder:** temporary list of activities that the user is creating before sa**ving the** the database
   - **router:** keeps track of react router history and location change
 
-### Node
+#### Node
 - Day Voyage utilizes Node.js for its extensive package ecosystem through npm, including React and other libraries.
 
-###### Express
+#### Express
 - Day Voyage is served using Express, which provides server-side routing and an enviornment for executing API calls to the database and external APIs.
 - Utilizes middleware such as body-parser for requests and webpack-dev-middleware to serve our Webpack assets.
 
 ###### Webpack
 
 
-## API's
+## APIs
 The data powering our app
 
 ###### [Day Voyage API](https://github.com/sweaty-figs/sweaty-figs-db)
