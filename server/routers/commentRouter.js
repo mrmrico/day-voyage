@@ -14,4 +14,15 @@ commentRouter
       });
   });
 
+commentRouter
+  .route('/get')
+  .post((request, response) => {
+    axios(`http://ec2-52-39-9-146.us-west-2.compute.amazonaws.com:443/v1/comments`)
+      .then(data => response.send(data.data))
+      .catch(error => {
+        console.log(error);
+        response.send(error);
+      });
+  });
+
 module.exports = commentRouter;

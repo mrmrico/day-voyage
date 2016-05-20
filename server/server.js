@@ -85,13 +85,12 @@ app.get('/api/reversegeocode', function(request, response) {
 });
 
 
-
 app.get('*', function (request, response){
   response.sendFile(path.join(__dirname + '/../src/index.html'));
 });
 
 
-const port = process.env.PORT || 443;
+const port = process.env.PORT || 3000;
 
 app.listen(port);
 

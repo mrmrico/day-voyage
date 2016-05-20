@@ -265,7 +265,7 @@ export function getPlansByUser(userID, cb) {
  * @param  {Function} cb
  */
 export function getPlan(planID, cb) {
-  fetch(`http://ec2-52-39-9-146.us-west-2.compute.amazonaws.com:443/v1/plans/${planID}`)
+  fetch(`/plan/getplan`)
    .then(parseJSON)
    .then(data => {
       console.log('getting comments');
@@ -338,8 +338,17 @@ export function deletePlan(planID, cb) {
  */
 export function getComments(type, id, cb) {
   let queryString = `?${type}_id=${id}`;
-  let url = `http://ec2-52-39-9-146.us-west-2.compute.amazonaws.com:443/v1/comments${queryString}`;
-  fetch(url)
+  let reqBody = {
+    queryString: queryString
+  };
+  // let url = `http://ec2-52-39-9-146.us-west-2.compute.amazonaws.com:443/v1/comments${queryString}`;
+  fetch('/comment/get', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(reqBody),
+  })
     .then(parseJSON)
     .then(response => cb(response))
     .catch(error => console.log(error));

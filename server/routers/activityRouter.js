@@ -28,7 +28,7 @@ activityRouter
 
     delete request.body.activity.icon;
     delete request.body.activity.clientside_id;
-    delete request.body.activity.index;
+    // delete request.body.activity.index;
     request.body.activity.categories = JSON.stringify([].concat(request.body.activity.categories));
     // request.body.activity.categories;
     delete request.body.activity.neighborhood;
